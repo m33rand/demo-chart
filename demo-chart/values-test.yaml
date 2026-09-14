@@ -1,3 +1,6 @@
 replicaCount: 1
 image:
   tag: "1.21"
+autoscaling:
+  enabled: true
+  minReplicas: 3

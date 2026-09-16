@@ -4,3 +4,23 @@ image:
 autoscaling:
   enabled: false
   minReplicas: 3
+
+# nginx conf
+nginx:
+  config:
+    custom: |
+      server {
+        listen 80;
+        location / {
+          return 200 'Hello from custom nginx';
+        }
+      }
+# nginx volumes
+volumeMounts:
+  - name: nginx-config
+    mountPath: /etc/nginx/conf.d/default.conf
+    subPath: nginx.conf
+volumes:
+  - name: nginx-config
+    configMap:
+      name: demo-chart-nginx-config

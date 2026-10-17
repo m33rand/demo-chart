@@ -3,7 +3,7 @@ image:
   tag: "1.21"
 autoscaling:
   enabled: false
-  minReplicas: 8
+  minReplicas: 6
 
 # nginx conf
 nginx:
